@@ -1,3 +1,4 @@
+-- Active: 1681473326768@@127.0.0.1@3306
 -- Tabelas já foram criadas
 CREATE TABLE bands (
     id TEXT PRIMARY KEY UNIQUE NOT NULL,
@@ -9,6 +10,8 @@ CREATE TABLE songs (
     name TEXT NOT NULL,
     band_id TEXT NOT NULL,
     FOREIGN KEY (band_id) REFERENCES bands (id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
 );
 
 -- Bandas já foram inseridas
